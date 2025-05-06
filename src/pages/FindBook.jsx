@@ -12,7 +12,13 @@ export default function FindBook({ bookFacade }) {
 
   function findBook(event) {
     event.preventDefault();
-    setCurrentBook(bookFacade.findBook(id));
+
+    const book = bookFacade.findBook(id);
+    if (book !== undefined) {
+      setCurrentBook(bookFacade.findBook(id));
+    } else {
+      setCurrentBook(blankBook);
+    }
   }
 
   return (
@@ -39,11 +45,11 @@ export default function FindBook({ bookFacade }) {
           </tr>
         </thead>
         <tbody>
-            <tr>
-              <td>{currentBook.id}</td>
-              <td>{currentBook.title}</td>
-              <td>{currentBook.info}</td>
-            </tr>
+          <tr>
+            <td>{currentBook.id}</td>
+            <td>{currentBook.title}</td>
+            <td>{currentBook.info}</td>
+          </tr>
         </tbody>
       </table>
     </>
