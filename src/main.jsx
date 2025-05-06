@@ -49,13 +49,15 @@ import Books from "./pages/Books";
 import AddBook from "./pages/AddBook";
 import Contact from "./pages/Contact";
 
+import bookFacade from "./bookFacade.js";
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <App bookFacade={bookFacade} />,
     children: [
-      { path: "/", element: <Books /> },
-      { path: "/addbook", element: <AddBook /> },
+      { path: "/", element: <Books bookFacade={bookFacade} /> },
+      { path: "/addbook", element: <AddBook bookFacade={bookFacade}/> },
       { path: "/contact", element: <Contact /> },
     ],
   },

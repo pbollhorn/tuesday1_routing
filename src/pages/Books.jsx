@@ -1,6 +1,4 @@
-import bookFacade from "../bookFacade.js";
-
-export default function Books() {
+export default function Books({ bookFacade }) {
   const books = bookFacade.getBooks();
 
   return (
