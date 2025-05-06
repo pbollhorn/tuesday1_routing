@@ -1,7 +1,9 @@
 import { useState } from "react";
 
+const blankBook = { title: "", info: "" };
+
 export default function AddBook({ bookFacade }) {
-  const [currentBook, setCurrentBook] = useState({ title: "", info: "" });
+  const [currentBook, setCurrentBook] = useState(blankBook);
 
   function handleChange(event) {
     const id = event.target.id;
@@ -9,11 +11,19 @@ export default function AddBook({ bookFacade }) {
     setCurrentBook({ ...currentBook, [id]: value });
   }
 
+  function addBook() {
+    alert("hallo");
+  }
+
+  function clearFields() {
+    setCurrentBook(blankBook);
+  }
+
   return (
     <>
       {JSON.stringify(currentBook)}
       <h2>Add Book</h2>
-      <form>
+      <form onSubmit={addBook}>
         <label htmlFor="title">Title</label>
         <input
           id="title"
@@ -30,7 +40,9 @@ export default function AddBook({ bookFacade }) {
           value={currentBook.info}
           onChange={handleChange}
         ></input>
+        <button type="submit">Add Book</button>
       </form>
+      <button onClick={clearFields}>Clear Fields</button>
     </>
   );
 }
