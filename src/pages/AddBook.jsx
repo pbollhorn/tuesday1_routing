@@ -11,8 +11,10 @@ export default function AddBook({ bookFacade }) {
     setCurrentBook({ ...currentBook, [id]: value });
   }
 
-  function addBook() {
-    alert("hallo");
+  function addBook(event) {
+    event.preventDefault();
+    bookFacade.addBook(currentBook);
+    clearFields();
   }
 
   function clearFields() {
