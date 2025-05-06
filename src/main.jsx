@@ -46,7 +46,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Books from "./pages/Books";
-import About from "./pages/About";
+import AddBook from "./pages/AddBook";
 import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "/", element: <Books /> },
-      { path: "/about", element: <About /> },
+      { path: "/addbook", element: <AddBook /> },
       { path: "/contact", element: <Contact /> },
     ],
   },

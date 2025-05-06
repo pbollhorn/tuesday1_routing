@@ -6,8 +6,8 @@ export default function Navbar() {
       <Link to="/" style={{ marginRight: "1rem" }}>
         Books
       </Link>
-      <Link to="/about" style={{ marginRight: "1rem" }}>
-        About
+      <Link to="/addbook" style={{ marginRight: "1rem" }}>
+        Add Book
       </Link>
       <Link to="/contact">Contact</Link>
     </nav>
