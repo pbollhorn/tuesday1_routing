@@ -47,7 +47,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Books from "./pages/Books";
 import AddBook from "./pages/AddBook";
-import Contact from "./pages/Contact";
+import FindBook from "./pages/FindBook.jsx";
 
 import bookFacade from "./bookFacade.js";
 
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Books bookFacade={bookFacade} /> },
       { path: "/addbook", element: <AddBook bookFacade={bookFacade}/> },
-      { path: "/contact", element: <Contact /> },
+      { path: "/findbook", element: <FindBook bookFacade={bookFacade}/> },
     ],
   },
 ]);

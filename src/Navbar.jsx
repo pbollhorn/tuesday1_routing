@@ -9,7 +9,7 @@ export default function Navbar() {
       <Link to="/addbook" style={{ marginRight: "1rem" }}>
         Add Book
       </Link>
-      <Link to="/contact">Contact</Link>
+      <Link to="/findbook">Find Book</Link>
     </nav>
   );
 }
