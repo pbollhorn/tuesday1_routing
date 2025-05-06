@@ -1,55 +1,13 @@
-// import { StrictMode } from 'react'
-// import { createRoot } from 'react-dom/client'
-// import './index.css'
-// import App from './App.jsx'
-
-// createRoot(document.getElementById('root')).render(
-//   <StrictMode>
-//     <App />
-//   </StrictMode>,
-// )
-
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-// import { BrowserRouter } from "react-router";
-// import App from "./app";
-
-// const root = document.getElementById("root");
-
-// ReactDOM.createRoot(root).render(
-//   <BrowserRouter>
-//     <App />
-//   </BrowserRouter>
-// );
-
-// import * as React from "react";
-// import * as ReactDOM from "react-dom/client";
-// import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import "./index.css";
-// import Root from "./routes/root";
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Root />,
-//   },
-// ]);
-
-// ReactDOM.createRoot(document.getElementById("root")).render(
-//   <React.StrictMode>
-//     <RouterProvider router={router} />
-//   </React.StrictMode>
-// );
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Books from "./pages/Books";
 import AddBook from "./pages/AddBook";
-import FindBook from "./pages/FindBook.jsx";
-
+import FindBook from "./pages/FindBook";
 import bookFacade from "./bookFacade.js";
+
+const blankBook = { id: "", title: "", info: "" };
 
 const router = createBrowserRouter([
   {
@@ -57,8 +15,14 @@ const router = createBrowserRouter([
     element: <App bookFacade={bookFacade} />,
     children: [
       { path: "/", element: <Books bookFacade={bookFacade} /> },
-      { path: "/addbook", element: <AddBook bookFacade={bookFacade}/> },
-      { path: "/findbook", element: <FindBook bookFacade={bookFacade}/> },
+      {
+        path: "/addbook",
+        element: <AddBook bookFacade={bookFacade} blankBook={blankBook} />,
+      },
+      {
+        path: "/findbook",
+        element: <FindBook bookFacade={bookFacade} blankBook={blankBook} />,
+      },
     ],
   },
 ]);

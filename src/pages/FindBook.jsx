@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-const blankBook = { id: "", title: "", info: "" };
-
-export default function FindBook({ bookFacade }) {
+export default function FindBook({ bookFacade, blankBook }) {
   const [id, setId] = useState("");
   const [currentBook, setCurrentBook] = useState(blankBook);
 

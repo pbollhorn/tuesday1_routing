@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-const blankBook = { title: "", info: "" };
-
-export default function AddBook({ bookFacade }) {
+export default function AddBook({ bookFacade, blankBook }) {
   const [currentBook, setCurrentBook] = useState(blankBook);
 
   function handleChange(event) {
